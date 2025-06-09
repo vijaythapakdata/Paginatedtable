@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "pagination-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/pagination/PaginationWebPart.js",
+          "manifest": "./src/webparts/pagination/PaginationWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "PaginationWebPartStrings": "lib/webparts/pagination/loc/{locale}.js"
+  }
+}
