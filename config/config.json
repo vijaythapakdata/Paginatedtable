@@ -9,10 +9,28 @@
           "manifest": "./src/webparts/pagination/PaginationWebPart.manifest.json"
         }
       ]
+    },
+    "get-profile-info-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/getProfileInfo/GetProfileInfoWebPart.js",
+          "manifest": "./src/webparts/getProfileInfo/GetProfileInfoWebPart.manifest.json"
+        }
+      ]
+    },
+    "get-all-users-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/getAllUsers/GetAllUsersWebPart.js",
+          "manifest": "./src/webparts/getAllUsers/GetAllUsersWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
-    "PaginationWebPartStrings": "lib/webparts/pagination/loc/{locale}.js"
+    "PaginationWebPartStrings": "lib/webparts/pagination/loc/{locale}.js",
+    "GetProfileInfoWebPartStrings": "lib/webparts/getProfileInfo/loc/{locale}.js",
+    "GetAllUsersWebPartStrings": "lib/webparts/getAllUsers/loc/{locale}.js"
   }
 }
