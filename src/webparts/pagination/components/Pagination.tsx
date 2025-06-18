@@ -2,10 +2,10 @@ import * as React from 'react';
 // import styles from './Pagination.module.scss';
 import type { IPaginationProps } from './IPaginationProps';
 // import { escape } from '@microsoft/sp-lodash-subset';
-import {sp} from "@pnp/sp/presets/all";
-import "@pnp/sp/webs";
-import "@pnp/sp/items";
-import "@pnp/sp/items";
+import {sp} from '@pnp/sp/presets/all';
+import '@pnp/sp/webs';
+import '@pnp/sp/items';
+import '@pnp/sp/items';
 import {Table,Input} from 'antd';
  const Pagination:React.FC<IPaginationProps>=(props)=>{
   const[items,setItems]=React.useState<any[]>([]);

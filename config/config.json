@@ -25,12 +25,21 @@
           "manifest": "./src/webparts/getAllUsers/GetAllUsersWebPart.manifest.json"
         }
       ]
+    },
+    "get-events-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/getEvents/GetEventsWebPart.js",
+          "manifest": "./src/webparts/getEvents/GetEventsWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
     "PaginationWebPartStrings": "lib/webparts/pagination/loc/{locale}.js",
     "GetProfileInfoWebPartStrings": "lib/webparts/getProfileInfo/loc/{locale}.js",
-    "GetAllUsersWebPartStrings": "lib/webparts/getAllUsers/loc/{locale}.js"
+    "GetAllUsersWebPartStrings": "lib/webparts/getAllUsers/loc/{locale}.js",
+    "GetEventsWebPartStrings": "lib/webparts/getEvents/loc/{locale}.js"
   }
 }

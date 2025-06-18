@@ -1,4 +1,4 @@
-declare interface IPaginationWebPartStrings {
+declare interface IGetEventsWebPartStrings {
   PropertyPaneDescription: string;
   BasicGroupName: string;
   DescriptionFieldLabel: string;
@@ -13,7 +13,7 @@ declare interface IPaginationWebPartStrings {
   UnknownEnvironment: string;
 }
 
-declare module "PaginationWebPartStrings" {
-  const strings: IPaginationWebPartStrings;
+declare module 'GetEventsWebPartStrings' {
+  const strings: IGetEventsWebPartStrings;
   export = strings;
 }

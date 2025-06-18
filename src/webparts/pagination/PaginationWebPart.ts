@@ -1,16 +1,16 @@
-import * as React from 'react';
-import * as ReactDom from 'react-dom';
-import { Version } from '@microsoft/sp-core-library';
+import * as React from "react";
+import * as ReactDom from "react-dom";
+import { Version } from "@microsoft/sp-core-library";
 import {
   type IPropertyPaneConfiguration,
   PropertyPaneTextField
-} from '@microsoft/sp-property-pane';
-import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
-import { IReadonlyTheme } from '@microsoft/sp-component-base';
+} from "@microsoft/sp-property-pane";
+import { BaseClientSideWebPart } from "@microsoft/sp-webpart-base";
+import { IReadonlyTheme } from "@microsoft/sp-component-base";
 
-import * as strings from 'PaginationWebPartStrings';
-import Pagination from './components/Pagination';
-import { IPaginationProps } from './components/IPaginationProps';
+import * as strings from "PaginationWebPartStrings";
+import Pagination from "./components/Pagination";
+import { IPaginationProps } from "./components/IPaginationProps";
 
 export interface IPaginationWebPartProps {
   description: string;
@@ -19,7 +19,7 @@ export interface IPaginationWebPartProps {
 export default class PaginationWebPart extends BaseClientSideWebPart<IPaginationWebPartProps> {
 
   private _isDarkTheme: boolean = false;
-  private _environmentMessage: string = '';
+  private _environmentMessage: string = "";
 
   public render(): void {
     const element: React.ReactElement<IPaginationProps> = React.createElement(
@@ -51,16 +51,16 @@ export default class PaginationWebPart extends BaseClientSideWebPart<IPagination
     if (!!this.context.sdks.microsoftTeams) { // running in Teams, office.com or Outlook
       return this.context.sdks.microsoftTeams.teamsJs.app.getContext()
         .then(context => {
-          let environmentMessage: string = '';
+          let environmentMessage: string = "";
           switch (context.app.host.name) {
-            case 'Office': // running in Office
+            case "Office": // running in Office
               environmentMessage = this.context.isServedFromLocalhost ? strings.AppLocalEnvironmentOffice : strings.AppOfficeEnvironment;
               break;
-            case 'Outlook': // running in Outlook
+            case "Outlook": // running in Outlook
               environmentMessage = this.context.isServedFromLocalhost ? strings.AppLocalEnvironmentOutlook : strings.AppOutlookEnvironment;
               break;
-            case 'Teams': // running in Teams
-            case 'TeamsModern':
+            case "Teams": // running in Teams
+            case "TeamsModern":
               environmentMessage = this.context.isServedFromLocalhost ? strings.AppLocalEnvironmentTeams : strings.AppTeamsTabEnvironment;
               break;
             default:
@@ -85,9 +85,9 @@ export default class PaginationWebPart extends BaseClientSideWebPart<IPagination
     } = currentTheme;
 
     if (semanticColors) {
-      this.domElement.style.setProperty('--bodyText', semanticColors.bodyText || null);
-      this.domElement.style.setProperty('--link', semanticColors.link || null);
-      this.domElement.style.setProperty('--linkHovered', semanticColors.linkHovered || null);
+      this.domElement.style.setProperty("--bodyText", semanticColors.bodyText || null);
+      this.domElement.style.setProperty("--link", semanticColors.link || null);
+      this.domElement.style.setProperty("--linkHovered", semanticColors.linkHovered || null);
     }
 
   }
@@ -97,7 +97,7 @@ export default class PaginationWebPart extends BaseClientSideWebPart<IPagination
   }
 
   protected get dataVersion(): Version {
-    return Version.parse('1.0');
+    return Version.parse("1.0");
   }
 
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
@@ -111,7 +111,7 @@ export default class PaginationWebPart extends BaseClientSideWebPart<IPagination
             {
               groupName: strings.BasicGroupName,
               groupFields: [
-                PropertyPaneTextField('description', {
+                PropertyPaneTextField("description", {
                   label: strings.DescriptionFieldLabel
                 })
               ]

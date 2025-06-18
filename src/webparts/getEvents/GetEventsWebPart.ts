@@ -8,31 +8,29 @@ import {
 import { BaseClientSideWebPart } from "@microsoft/sp-webpart-base";
 import { IReadonlyTheme } from "@microsoft/sp-component-base";
 
-import * as strings from "GetProfileInfoWebPartStrings";
-import GetProfileInfo from "./components/GetProfileInfo";
-import { IGetProfileInfoProps } from "./components/IGetProfileInfoProps";
+import * as strings from "GetEventsWebPartStrings";
+import GetEvents from "./components/GetEvents";
+import { IGetEventsProps } from "./components/IGetEventsProps";
 
-export interface IGetProfileInfoWebPartProps {
+export interface IGetEventsWebPartProps {
   description: string;
 }
 
-export default class GetProfileInfoWebPart extends BaseClientSideWebPart<IGetProfileInfoWebPartProps> {
+export default class GetEventsWebPart extends BaseClientSideWebPart<IGetEventsWebPartProps> {
 
   private _isDarkTheme: boolean = false;
   private _environmentMessage: string = "";
 
-  public  async render(): Promise<void> {
-
-    const graph=await this.context.msGraphClientFactory.getClient("3");
-    const element: React.ReactElement<IGetProfileInfoProps> = React.createElement(
-      GetProfileInfo,
+  public render(): void {
+    const element: React.ReactElement<IGetEventsProps> = React.createElement(
+      GetEvents,
       {
         description: this.properties.description,
         isDarkTheme: this._isDarkTheme,
         environmentMessage: this._environmentMessage,
         hasTeamsContext: !!this.context.sdks.microsoftTeams,
         userDisplayName: this.context.pageContext.user.displayName,
-        graphClient:graph
+        context:this.context
       }
     );
 
